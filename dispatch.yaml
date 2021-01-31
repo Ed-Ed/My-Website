@@ -1,0 +1,9 @@
+dispatch:
+  - url: "www.gstaredward.com/*"
+    service: my-website
+  - url: "gstaredward.com/*"
+    service: my-website
+  - url: "www.gstared.com/*"
+    service: my-website-nextjs
+  - url: "gstared.com/*"
+    service: my-website-nextjs
