@@ -57,8 +57,6 @@ const setup = (additionalMiddleware?: RequestHandler[]): Express => {
       stream.pipe(res, { end: false });
       stream.on('end', () => res.end(footer(chunkExtractor.getScriptTags())));
     } catch (error) {
-      console.log(error);
-
       res.send(JSON.stringify(error));
     }
   });
