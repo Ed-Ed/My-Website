@@ -1,10 +1,7 @@
-import React from "react";
-import loadable from "@loadable/component";
+import React from 'react';
+import loadable from '@loadable/component';
 
-// import Nav from "../components/Nav";
-// import Footer from "../components/Footer";
-
-const HomePage = loadable(() => import("./Home"));
+const HomePage = loadable(() => import('./Home'));
 
 type PageType = {
   path: string;
@@ -19,10 +16,10 @@ export type Pages = {
 
 export const pages: Pages = {
   Home: {
-    path: "/",
+    path: '/',
     component: <HomePage />,
-    title: "Home"
-  }
+    title: 'Home',
+  },
 };
 
 type Props = {
@@ -32,11 +29,9 @@ type Props = {
 const Page: React.FC<Props> = ({ pageName }) => {
   return (
     <>
-      {/* <Nav pages={pages} /> */}
       <main>{pages[pageName].component || pages.Home.component}</main>
-      {/* <Footer /> */}
     </>
   );
 };
 
-export default Page;
+export { Page };

@@ -1,8 +1,8 @@
-import favicon from "../../client/static/Images/favicon/favicon.png";
-import faviconApple from "../../client/static/Images/favicon/apple-touch-icon.png";
+import favicon from '../../client/static/Images/favicon/favicon.png';
+import faviconApple from '../../client/static/Images/favicon/apple-touch-icon.png';
 
 // double space | new lines | comments
-const regex = new RegExp(/\s{2,}|\r\n|\n|\r|\/\*[\s\S]*?\*\/|\/\/.*/g);
+const REGEX = new RegExp(/\s{2,}|\r\n|\n|\r|\/\*[\s\S]*?\*\/|\/\/.*/g);
 
 const header = (linkTags: string, globalStyles: string): string =>
   `<!DOCTYPE html>
@@ -19,13 +19,13 @@ const header = (linkTags: string, globalStyles: string): string =>
       <style>${globalStyles}</style>
     </head>
     <body>
-      <div id="app">`.replace(regex, "");
+      <div id="app">`.replace(REGEX, '');
 
 const footer = (scriptTags: string): string =>
   `</div>
       ${scriptTags}
     </body>
   </html>
-`.replace(/\s{2,}/g, "");
+`.replace(/\s{2,}/g, '');
 
 export { header, footer };

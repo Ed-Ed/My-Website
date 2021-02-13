@@ -1,4 +1,4 @@
-import { setup, serve } from "./server";
-import webpack from "./middleware/webpack";
+import { setup, serve } from './server';
+import { webpackMiddleware } from './middleware/webpack';
 
-serve(setup(webpack()), 8081);
+serve(setup(webpackMiddleware()), 8081);

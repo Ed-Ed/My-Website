@@ -1,29 +1,28 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import fs from 'fs';
+import path from 'path';
+import { ChunkExtractor } from '@loadable/server';
+import { isProduction } from '../helpers/environment';
 
-import { ChunkExtractor } from "@loadable/server";
-import fs from "fs";
-import path from "path";
+const STATS_FILE = path.resolve('dist/client/loadable-stats.json');
 
-const isProduction = process.env.NODE_ENV === "production";
-const statsFile = path.resolve("dist/client/loadable-stats.json");
-let stats: any;
+let stats: object;
 
 const getChunkExtractor = (): ChunkExtractor => {
-  if (isProduction && !stats) {
-    stats = JSON.parse(fs.readFileSync(statsFile, "utf8"));
+  if (isProduction() && !stats) {
+    stats = JSON.parse(fs.readFileSync(STATS_FILE, 'utf8'));
   }
 
-  if (isProduction) {
+  if (isProduction()) {
     return new ChunkExtractor({
       stats,
-      publicPath: "/"
+      publicPath: '/',
     });
   }
 
   return new ChunkExtractor({
-    statsFile,
-    publicPath: "/"
+    statsFile: STATS_FILE,
+    publicPath: '/',
   });
 };
 
-export default getChunkExtractor;
+export { getChunkExtractor };

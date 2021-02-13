@@ -1,7 +1,7 @@
-import React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
-import Page, { pages } from "./pages";
+import { Page, pages } from './pages';
 
 const PageRoutes = Object.entries(pages).map(([k, v]) => (
   <Route key={v.path} exact path={v.path}>
@@ -9,13 +9,11 @@ const PageRoutes = Object.entries(pages).map(([k, v]) => (
   </Route>
 ));
 
-const App: React.FC = () => {
-  return (
-    <Switch>
-      {PageRoutes}
-      <Redirect to="/" />
-    </Switch>
-  );
-};
+const App: React.FC = () => (
+  <Switch>
+    {PageRoutes}
+    <Redirect to="/" />
+  </Switch>
+);
 
-export default App;
+export { App };

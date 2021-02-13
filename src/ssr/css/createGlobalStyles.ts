@@ -1,9 +1,9 @@
-import { css } from "styled-components";
-import { Theme } from "@edwardandrewb/elements";
+import { css } from 'styled-components';
+import { Theme } from '@edwardandrewb/elements';
 
-import cssReset from "./cssReset";
+import cssReset from './cssReset';
 
-export default (theme: Theme): string => `
+const createGlobalStyles = (theme: Theme): string => `
   ${cssReset}
 
   *, *:before, *:after {
@@ -11,7 +11,7 @@ export default (theme: Theme): string => `
   }
 
   body {
-    ${css(theme.typography.body1).join("")}
+    ${css(theme.typography.body1).join('')}
   }
 
   a {
@@ -28,3 +28,5 @@ export default (theme: Theme): string => `
     color: ${theme.palette.primary.main};
   }
 `;
+
+export { createGlobalStyles };

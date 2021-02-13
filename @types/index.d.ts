@@ -1,14 +1,14 @@
-declare module "*.png" {
-  const _default: string;
-  export default _default;
+declare module '*.png' {
+  const png: string;
+  export default png;
 }
 
-declare module "*.jpg" {
-  const _default: string;
-  export default _default;
+declare module '*.jpg' {
+  const jpg: string;
+  export default jpg;
 }
 
-declare module "*.svg" {
-  const content: string;
-  export default content;
+declare module '*.svg' {
+  const svg: string;
+  export default svg;
 }

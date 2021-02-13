@@ -1,38 +1,37 @@
-import React from "react";
-import express, { Express } from "express";
-import compression from "compression";
-import path from "path";
-import { ServerStyleSheet } from "styled-components";
-import { renderToNodeStream } from "react-dom/server";
-import { StaticRouterContext } from "react-router";
-import { createTheme } from "@edwardandrewb/elements";
-
-import getChunkExtractor from "./services/chunkExtractor";
-import NodeApp from "../client/index.node";
-import { header, footer } from "./html";
-import createGlobalStyles from "./css/createGlobalStyles";
+import React from 'react';
+import express, { Express, RequestHandler } from 'express';
+import compression from 'compression';
+import path from 'path';
+import { ServerStyleSheet } from 'styled-components';
+import { renderToNodeStream } from 'react-dom/server';
+import { StaticRouterContext } from 'react-router';
+import { createTheme } from '@edwardandrewb/elements';
+import { getChunkExtractor } from './services/chunkExtractor';
+import { NodeApp } from '../client/index.node';
+import { header, footer } from './html';
+import { createGlobalStyles } from './css/createGlobalStyles';
 
 const theme = createTheme();
 const globalStyles = createGlobalStyles(theme);
 
 const defaultMiddleware = [
   compression(),
-  express.static(path.resolve("dist/client"))
+  express.static(path.resolve('dist/client')),
 ];
 
-const setup = (additionalMiddleware = []): Express => {
+const setup = (additionalMiddleware?: RequestHandler[]): Express => {
   const app = express();
 
-  [defaultMiddleware, ...additionalMiddleware].forEach(middleware => {
+  [defaultMiddleware, ...additionalMiddleware].forEach((middleware) => {
     app.use(middleware);
   });
 
-  app.get("/robots.txt", (req, res) => {
-    res.type("text/plain");
-    res.send("");
+  app.get('/robots.txt', (req, res) => {
+    res.type('text/plain');
+    res.send('');
   });
 
-  app.get("/*", async (req, res) => {
+  app.get('/*', async (req, res) => {
     try {
       const sheet = new ServerStyleSheet();
       const routerContext: StaticRouterContext = {};
@@ -52,13 +51,15 @@ const setup = (additionalMiddleware = []): Express => {
         )
       );
 
-      res.set("content-type", "text/html");
+      res.set('content-type', 'text/html');
       res.write(header(chunkExtractor.getLinkTags(), globalStyles));
 
       stream.pipe(res, { end: false });
-      stream.on("end", () => res.end(footer(chunkExtractor.getScriptTags())));
-    } catch (e) {
-      res.send(JSON.stringify(e));
+      stream.on('end', () => res.end(footer(chunkExtractor.getScriptTags())));
+    } catch (error) {
+      console.log(error);
+
+      res.send(JSON.stringify(error));
     }
   });
 
@@ -66,9 +67,10 @@ const setup = (additionalMiddleware = []): Express => {
 };
 
 const serve = (app: Express, port: number): void => {
-  app.listen(port, () =>
-    console.log(`\n🚀 Server listening on port ${port}\n`)
-  );
+  app.listen(port, () => {
+    // eslint-disable-next-line no-console
+    console.log(`\n🚀 Server listening on port ${port}\n`);
+  });
 };
 
 export { setup, serve };

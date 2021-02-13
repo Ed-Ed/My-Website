@@ -1,5 +1,5 @@
-import { Theme } from "@edwardandrewb/elements";
+import { Theme } from '@edwardandrewb/elements';
 
-declare module "styled-components" {
+declare module 'styled-components' {
   interface DefaultTheme extends Theme {}
 }

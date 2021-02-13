@@ -11,7 +11,3 @@ My portfolio website built in TypeScript using React with Styled Components. Web
 `yarn dev` to run in dev mode
 
 `yarn build` then `yarn start` to run in production mode
-
-## TODO
-
-- fix yarn dev (file not being in dist)
