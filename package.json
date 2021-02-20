@@ -3,17 +3,15 @@
   "private": true,
   "scripts": {
     "dev::ssr": "cross-env NODE_ENV=development MODE=ssr webpack",
-    "dev::client": "cross-env NODE_ENV=development MODE=client yarn start",
+    "dev::client": "cross-env NODE_ENV=development MODE=client npm run start",
     "prod::ssr": "cross-env NODE_ENV=production MODE=ssr webpack",
     "prod::client": "cross-env NODE_ENV=production MODE=client webpack",
     "clean": "rm -rf dist",
-    "nodemon": "nodemon --watch dist/ssr/index.js --exec yarn dev::client",
-    "dev": "concurrently \"yarn dev::ssr --watch\" \"yarn nodemon\"",
-    "build": "yarn clean && yarn prod::ssr && yarn prod::client",
+    "nodemon": "nodemon --watch dist/ssr/index.js --exec npm run dev::client",
+    "dev": "concurrently \"npm run dev::ssr --watch\" \"npm run nodemon\"",
+    "build": "npm run clean && npm run prod::ssr && npm run prod::client",
     "qa::lint": "eslint src/**/* --ext .ts,.tsx --no-error-on-unmatched-pattern",
     "qa::format": "prettier --check src/**/*.{ts,tsx} --write",
-    "qa": "yarn qa::format && yarn qa::lint",
-    "deploy": "yarn qa && yarn build && gcloud app deploy",
     "start": "node dist/ssr/index.js"
   },
   "devDependencies": {
