@@ -12,6 +12,8 @@
     "build": "npm run clean && npm run prod::ssr && npm run prod::client",
     "qa::lint": "eslint src/**/* --ext .ts,.tsx --no-error-on-unmatched-pattern",
     "qa::format": "prettier --check src/**/*.{ts,tsx} --write",
+    "qa": "npm run qa::format && npm run qa::lint",
+    "deploy": "npm run qa && npm run build && gcloud app deploy",
     "start": "node dist/ssr/index.js"
   },
   "devDependencies": {
