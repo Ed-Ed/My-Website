@@ -5,7 +5,7 @@ import { isProduction } from '../helpers/environment';
 
 const STATS_FILE = path.resolve('dist/client/loadable-stats.json');
 
-let stats: object;
+let stats: Record<string, unknown>;
 
 const getChunkExtractor = (): ChunkExtractor => {
   if (isProduction() && !stats) {

@@ -19,7 +19,7 @@ const defaultMiddleware = [
   express.static(path.resolve('dist/client')),
 ];
 
-const setup = (additionalMiddleware?: RequestHandler[]): Express => {
+const setup = (additionalMiddleware: RequestHandler[] = []): Express => {
   const app = express();
 
   [defaultMiddleware, ...additionalMiddleware].forEach((middleware) => {

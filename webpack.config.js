@@ -2,6 +2,7 @@ const Webpack = require('webpack');
 const LoadablePlugin = require('@loadable/webpack-plugin');
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const isProd = process.env.NODE_ENV === 'production';
 const isSsr = process.env.MODE === 'ssr';
@@ -73,5 +74,6 @@ module.exports = {
   plugins: [
     new LoadablePlugin(),
     !isProd && new Webpack.HotModuleReplacementPlugin(),
+    // new BundleAnalyzerPlugin(),
   ].filter(Boolean),
 };
