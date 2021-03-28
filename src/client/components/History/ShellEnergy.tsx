@@ -17,9 +17,10 @@ const ShellEnergy: React.FC = () => (
     </Typography>
 
     <Typography variant="body2">
-      I currently work with the following technologies and platforms: NextJS,
+      I mainly work with the following technologies and platforms: NextJS,
       NodeJS, React, TypeScript, GraphQL (Apollo), Redux, modern ECMAScript
-      (JavaScript), CSS-in-JS, Babel, Webpack, Git, Jest etcetera.
+      (JavaScript), CSS-in-JS (styled-jsx), Babel, Webpack, Git, Jest, Jira,
+      Bitbucket, Confluence.
     </Typography>
   </>
 );

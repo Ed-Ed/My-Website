@@ -6,10 +6,10 @@ node_modules
 src
 .eslintrc
 .gitignore
+.prettierrc
 app.yaml
+babel.config.js
 dispatch.yaml
-prettier.json
 README.md
 tsconfig.json
 webpack.config.js
-yarn.lock

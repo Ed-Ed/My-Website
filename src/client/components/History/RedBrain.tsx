@@ -15,16 +15,16 @@ const RedBrain: React.FC = () => (
     </Typography>
 
     <Typography variant="body2" gutterBottom>
-      At RedBrain, I was tasked with managing and updating the price comparison
-      website which we built in-house. We also built web apps to help maintain
-      the websites.
+      At RedBrain, I was primarily tasked with managing and updating the price
+      comparison website which we built in-house.
     </Typography>
 
     <Typography variant="body2">
-      I worked with the following technologies and platforms: NodeJS, React,
-      TypeScript, GraphQL (Apollo), Redux, modern ECMAScript (JavaScript),
-      CSS-in-JS, Babel, Webpack, NextJS, Git, Jest, Selenium, GitLab, Jira, Tag
-      Manager, Analytics, Optimise.
+      I mainly worked with the following technologies and platforms: NodeJS,
+      React, TypeScript, GraphQL (Apollo), Redux, modern ECMAScript
+      (JavaScript), CSS-in-JS (Styled Components & Emotion), Babel, Webpack,
+      Next, Go, Git, Jest, Selenium, GitLab, Jira, Tag Manager, Analytics,
+      Optimise.
     </Typography>
   </>
 );
