@@ -3,10 +3,8 @@ import { hydrate } from 'react-dom';
 import { loadableReady } from '@loadable/component';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { createTheme } from '@edwardandrewb/elements';
 import { App } from './App';
-
-const theme = createTheme();
+import { theme } from './theme';
 
 const WebApp: React.FC = () => (
   <ThemeProvider theme={theme}>

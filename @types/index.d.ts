@@ -9,6 +9,10 @@ declare module '*.jpg' {
 }
 
 declare module '*.svg' {
-  const svg: string;
+  type SVGProps = {
+    alt: string;
+  };
+
+  const svg: React.FC<SVGProps>;
   export default svg;
 }

@@ -11,6 +11,8 @@ const header = (linkTags: string, globalStyles: string): string =>
       <title>Edward</title>
       <link rel="icon" href="${favicon}" />
       <link rel="apple-touch-icon" href="${faviconApple}" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
       ${linkTags}
       <meta name="description" content="I am a full-stack JavaScript developer and this is my website." />
       <meta name="keywords" content="JavaScript" />

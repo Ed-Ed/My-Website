@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 import { Typography, Paper } from '@edwardandrewb/elements';
-import NextImage from '../../static/Images/websites/next.jpg';
 
 const WebsitesContainer = styled.div`
   margin-bottom: 32px;
@@ -42,10 +41,10 @@ const StyledPaper = styled(Paper)`
   }
 `;
 
-const Image = styled.img`
-  width: 140px;
-  height: 64px;
-`;
+// const Image = styled.img`
+//   width: 140px;
+//   height: 64px;
+// `;
 
 const Placeholder = styled.div`
   width: 140px;
@@ -59,7 +58,7 @@ const Websites: React.FC = () => (
     </Typography>
 
     <WebsitesContainer>
-      <Anchor href="https://www.eded.uk">
+      {/* <Anchor href="https://www.eded.uk">
         <StyledPaper>
           <div>
             <LazyLoad placeholder={<Placeholder />}>
@@ -90,7 +89,7 @@ const Websites: React.FC = () => (
             compare speed differences)
           </Typography>
         </StyledPaper>
-      </Anchor>
+      </Anchor> */}
 
       <Anchor href="http://www.webgl.uk/">
         <StyledPaper>
@@ -101,7 +100,7 @@ const Websites: React.FC = () => (
           <Typography color="primary">www.webgl.uk</Typography>
 
           <Typography align="center">
-            A website where I will host my WebGL game
+            A website where I will host a WebGL game
           </Typography>
         </StyledPaper>
       </Anchor>

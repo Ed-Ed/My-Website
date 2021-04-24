@@ -5,13 +5,12 @@ import path from 'path';
 import { ServerStyleSheet } from 'styled-components';
 import { renderToNodeStream } from 'react-dom/server';
 import { StaticRouterContext } from 'react-router';
-import { createTheme } from '@edwardandrewb/elements';
 import { getChunkExtractor } from './services/chunkExtractor';
 import { NodeApp } from '../client/index.node';
 import { header, footer } from './html';
 import { createGlobalStyles } from './css/createGlobalStyles';
+import { theme } from '../client/theme';
 
-const theme = createTheme();
 const globalStyles = createGlobalStyles(theme);
 
 const defaultMiddleware = [

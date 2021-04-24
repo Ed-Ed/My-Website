@@ -5,7 +5,7 @@ import { WhoIAm } from '../components/WhoIAm';
 import { History } from '../components/History';
 import { Websites } from '../components/Websites';
 
-const SectionBase = styled.section`
+const SectionContainer = styled.section`
   position: relative;
   width: 100%;
   padding: 0 16px;
@@ -24,17 +24,17 @@ const Home: React.FC = () => {
     <>
       <WhoIAm />
 
-      <SectionBase>
+      <SectionContainer>
         <SectionContent>
           <History />
         </SectionContent>
-      </SectionBase>
+      </SectionContainer>
 
-      <SectionBase>
+      <SectionContainer>
         <SectionContent>
           <Websites />
         </SectionContent>
-      </SectionBase>
+      </SectionContainer>
     </>
   );
 };
