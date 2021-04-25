@@ -14,6 +14,7 @@
     "qa::format": "pretty-quick",
     "qa": "npm run qa::format && npm run qa::lint",
     "deploy": "npm run qa && npm run build && gcloud app deploy",
+    "dispatch": "gcloud app deploy dispatch.yaml",
     "start": "node dist/ssr/index.js"
   },
   "devDependencies": {

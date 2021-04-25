@@ -1,9 +1,9 @@
 dispatch:
   - url: 'www.gstaredward.com/*'
-    service: my-website
+    service: default
   - url: 'gstaredward.com/*'
-    service: my-website
+    service: default
   - url: 'www.gstared.com/*'
-    service: my-website
+    service: default
   - url: 'gstared.com/*'
-    service: my-website
+    service: default

@@ -1,2 +1,2 @@
-service: my-website
-runtime: nodejs12
+service: default
+runtime: nodejs14
