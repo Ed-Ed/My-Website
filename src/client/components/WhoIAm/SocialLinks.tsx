@@ -11,7 +11,7 @@ const SocialLinksContainer = styled.div`
 
 const Svg = styled.svg`
   margin-right: 16px;
-  fill: ${(props) => props.theme.palette.text.primary};
+  fill: ${(props) => props.theme.palette.text.secondary};
 `;
 
 const SocialLinks: React.FC = () => (

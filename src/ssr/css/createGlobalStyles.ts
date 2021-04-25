@@ -17,7 +17,7 @@ const createGlobalStyles = (theme: Theme): string => `
   a {
     outline: none;
     display: flex;
-    color: ${theme.palette.text.primary};
+    color: ${theme.palette.text.secondary};
     text-decoration: none;
     transition: ${theme.transition};
   }
