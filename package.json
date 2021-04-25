@@ -7,8 +7,8 @@
     "prod::ssr": "cross-env NODE_ENV=production MODE=ssr webpack",
     "prod::client": "cross-env NODE_ENV=production MODE=client webpack",
     "clean": "rm -rf dist",
-    "nodemon": "nodemon --watch dist/ssr/index.js --exec npm run dev::client",
-    "dev": "concurrently \"npm run dev::ssr --watch\" \"npm run nodemon\"",
+    "nodemon": "nodemon --watch dist/ssr/* --exec npm run dev::client",
+    "dev": "npm run clean && npm run dev::ssr && concurrently \"npm run dev::ssr -- --watch\" \"npm run nodemon\"",
     "build": "npm run clean && npm run prod::ssr && npm run prod::client",
     "qa::lint": "eslint src/**/* --ext .ts,.tsx --no-error-on-unmatched-pattern",
     "qa::format": "pretty-quick",
@@ -74,7 +74,7 @@
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.0",
     "webpack": "^4.46.0",
-    "webpack-dev-middleware": "^3.7.3",
+    "webpack-dev-middleware": "^4.1.0",
     "webpack-hot-middleware": "^2.25.0"
   }
 }

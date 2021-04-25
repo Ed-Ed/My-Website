@@ -19,7 +19,7 @@ const Claires: React.FC = () => (
     </Typography>
 
     <Typography gutterBottom>
-      At Claire&apos;s,I was tasked with managing and continuously updating the
+      At Claire&apos;s, I was tasked with managing and continuously updating the
       E-commerce website using Salesforce&apos;s Demandware platform. Our team
       provided a consistent growth in online revenue with each release. We also
       built in-house applications for various business needs.

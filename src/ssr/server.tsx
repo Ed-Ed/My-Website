@@ -25,7 +25,7 @@ const setup = (additionalMiddleware: RequestHandler[] = []): Express => {
     app.use(middleware);
   });
 
-  app.get('/robots.txt', (req, res) => {
+  app.get('/robots.txt', (_req, res) => {
     res.type('text/plain');
     res.send('');
   });
@@ -56,7 +56,7 @@ const setup = (additionalMiddleware: RequestHandler[] = []): Express => {
       stream.pipe(res, { end: false });
       stream.on('end', () => res.end(footer(chunkExtractor.getScriptTags())));
     } catch (error) {
-      res.send(JSON.stringify(error));
+      res.send(error.message);
     }
   });
 

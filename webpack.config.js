@@ -72,7 +72,7 @@ module.exports = {
   },
   externals: isSsr ? [nodeExternals()] : undefined,
   plugins: [
-    new LoadablePlugin(),
+    !isSsr && new LoadablePlugin(),
     !isProd && new Webpack.HotModuleReplacementPlugin(),
     // new BundleAnalyzerPlugin(),
   ].filter(Boolean),
